@@ -163,7 +163,7 @@ export default class UIManager {
         this.formData.codename = e.target.value;
         this.formData.id = e.target.options[e.target.selectedIndex].id;
 
-        document.getElementById('image').src = `https://res.cloudinary.com/${this.options.acctName}/image/upload/${this.formData.codename}`;
+        document.getElementById('image').src  = `https://res.cloudinary.com/${this.options.acctName}/image/upload/${this.formData.codename}`;
     }
 
     updateValue(pictureStr) {
