@@ -4,14 +4,7 @@ export default class CloudinaryManager {
     }
 
     createMediaString(formdata) {
-        let mediaStr;
-
-        if (formdata.minWidth !== "") {
-            mediaStr = `media="(min-width: ${formdata.minWidth})"`;
-        } else if (formdata.maxWidth !== "") {
-            mediaStr = `media="(max-width: ${formdata.maxWidth})"`;
-        }
-
+        let mediaStr = (formdata.minWidth !== "") ? `media="(min-width: ${formdata.minWidth})"` : `media="(max-width: ${formdata.maxWidth})"`;
         return mediaStr;
     }
 
