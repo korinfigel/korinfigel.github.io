@@ -126,12 +126,7 @@ export default class UIManager {
         let minOrMax = mediaSizeRegex.exec(stringToBeParsed).groups.mediaType;
         let minMaxValue = mediaSizeRegex.exec(stringToBeParsed).groups.mediaSize;
 
-        let isMax;
-        if (minOrMax == "max") {
-            isMax = true;
-        } else {
-            isMax = false;
-        }
+        let isMax = (minOrMax == "max") ? true : false;
 
         if (isMax == false) {
             parsed.minWidth = minMaxValue + "px";
