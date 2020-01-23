@@ -139,12 +139,10 @@ export default class UIManager {
         this.formData.codename = document.getElementById('asset-selector').value;
 
         document.getElementById('minWidth').value = (selected.minWidth !== "") ? selected.minWidth : "";
-        //document.getElementById('minWidth').value = selected.minWidth;
         this.formData.minWidth = document.getElementById('minWidth').value;
 
         document.getElementById('maxWidth').value = (selected.maxWidth !== "") ? selected.maxWidth : "";
-        this.formData.maxWidth = selected.maxWidth;
-        //document.getElementById('maxWidth').value = selected.maxWidth;
+        this.formData.maxWidth = document.getElementById('maxWidth').value
 
         document.getElementById('width').value = selected.width;
         this.formData.width = document.getElementById('width').value;
