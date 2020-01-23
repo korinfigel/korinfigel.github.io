@@ -1,5 +1,4 @@
 import CloudinaryManager from "./CloudinaryManager.js";
-import SquidexManager from "./SquidexManager.js";
 
 export default class UIManager {
     constructor(options, assets) {
@@ -12,7 +11,6 @@ export default class UIManager {
 
     async initializeUIManager() {
         this.cloudinaryManager = new CloudinaryManager(this.options);
-        this.squidexManager = new SquidexManager(this.options);
         this.buildAssetList();
  
         let maxSelect = document.getElementById('maxWidth');
