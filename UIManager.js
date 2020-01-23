@@ -11,7 +11,7 @@ export default class UIManager {
 
     initializeUIManager() {
         this.cloudinaryManager = new CloudinaryManager(this.options);
-        this.buildAssetList();
+        //this.buildAssetList();
  
         let maxSelect = document.getElementById('maxWidth');
         let minSelect = document.getElementById('minWidth');
