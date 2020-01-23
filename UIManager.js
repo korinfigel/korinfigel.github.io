@@ -1,4 +1,3 @@
-import SquidexManager from "./SquidexManager.js";
 import CloudinaryManager from "./CloudinaryManager.js";
 
 export default class UIManager {
