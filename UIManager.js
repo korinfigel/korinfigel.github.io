@@ -82,7 +82,7 @@ export default class UIManager {
     }
 
     add() {
-        let sourcetag = this.buildItemPreview(this.formData);
+        let sourcetag = this.buildSourceTag(this.formData);
         this.sources.push(this.formData);
         
         let ul = document.getElementById("item-preview");
@@ -164,7 +164,7 @@ export default class UIManager {
         document.getElementById('crop').value = selected.crop;
         this.formData.crop = document.getElementById('crop').value;
 
-        this.buildItemPreview();
+        this.buildSourceTag();
     }
 
     removeItem(e, sourcetag) {
@@ -222,7 +222,7 @@ export default class UIManager {
         this.form.valueChanged(allSourcesStr);
     }
 
-    buildItemPreview() {
+    buildSourceTag() {
         let mediaString = this.cloudinaryManager.createMediaString(this.formData);
         let imgString = this.cloudinaryManager.createImageString(this.formData);
 
