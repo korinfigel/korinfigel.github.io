@@ -27,24 +27,7 @@ export default class CloudinaryManager {
             queryArr.push("c_" + formdata.crop);
         }
 
-        let imgStr;
-        let queryStr;
 
-        if (queryArr.length < 1) {
-            imgStr = `https://res.cloudinary.com/${this.options.acctName}/image/upload/${formData.codename}`;
-        } else if (queryArr.length > 1) {
-            for (var i = 0; i < queryArr.length; i++) {
-                if (i == 0) {
-                    queryStr = queryArr[i] + ",";
-                } else if (i == (queryArr.length - 1)) {
-                    queryStr = queryStr + queryArr[i];
-                } else {
-                    queryStr = queryStr + queryArr[i] + ",";
-                }
-
-                imgStr = `https://res.cloudinary.com/${acctName}/image/upload/${queryStr}/${formdata.codename}`;
-            }
-        }
-        return imgStr;
+        return (queryArr.length == 0) ? `https://res.cloudinary.com/${this.options.acctName}/image/upload/${formData.codename} : `https://res.cloudinary.com/${this.options.acctName}/image/upload/${queryArr.join(,)}/${formData.codename}`
     }
 }
