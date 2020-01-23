@@ -105,8 +105,8 @@ export default class UIManager {
             allSourcesStr = allSourcesStr + this.sources[i].sourceTag;
         }
 
+        this.squidexManager.form.valueChanged(allSourcesStr);
         //this.form.valueChanged(allSourcesStr);
-        this.squidexManager.updateFormValues(allSourcesStr);
     }
 
     regexParser(stringToBeParsed) {
