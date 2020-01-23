@@ -2,23 +2,16 @@ import SquidexManager from "./SquidexManager.js";
 import CloudinaryManager from "./CloudinaryManager.js";
 
 export default class UIManager {
-    constructor(options) {
+    constructor(options, assets) {
         this.options = options;
         this.formData = { codename: "", id: "", maxWidth: "", minWidth: "", width: "", height: "", crop: "", gravity: "", sourceTag: "" };
-        this.data = { assets: [], sources: [] };
+        this.assets = assets;
         this.sources = []; 
-        this.form = new SquidexFormField();
-        this.form.onInit(this.initializeSquidexManager.bind(this));
+        initializeUIManager()
     }
 
-    async initializeSquidexManager(ctx) {
-        let { access_token, token_type } = ctx.user.user;
-        this.options.accessToken = access_token;
-        this.options.tokenType = token_type;
-
-        this.squidexManager = new SquidexManager(this.options);
+    initializeUIManager() {
         this.cloudinaryManager = new CloudinaryManager(this.options);
-        this.data.assets = await this.squidexManager.getAssets();
         this.buildAssetList();
  
         let maxSelect = document.getElementById('maxWidth');
@@ -53,12 +46,6 @@ export default class UIManager {
 
         document.getElementById('addBtn')
             .addEventListener('click', this.add.bind(this));
-
-        let initialVal = this.form.getValue();
-        if (initialVal !== null) {
-            this.initForm(initialVal);
-            //this.cloudinaryManager.setImagePreview(initialVal.codename);
-        }
     }
 
     initForm(sourcesString) {
@@ -107,8 +94,6 @@ export default class UIManager {
         document.getElementById("maxWidth").removeAttribute("disabled");
         document.getElementById("minWidth").removeAttribute("disabled");
         document.getElementById('asset-selector').value = this.formData.codename;
-
-        this.updateValue();
     }
 
     regexParser(stringToBeParsed) {
@@ -194,7 +179,6 @@ export default class UIManager {
             }
         }
 
-        this.updateValue();
         e.stopPropagation()
     }
 
@@ -215,15 +199,6 @@ export default class UIManager {
         this.cloudinaryManager.setImagePreview(this.formData.codename);
     }
 
-    updateValue() {
-        let allSourcesStr = "";
-        for (var i = 0; i < this.sources.length; i++) {
-            allSourcesStr = allSourcesStr + this.sources[i].sourceTag;
-        }
-
-        this.form.valueChanged(allSourcesStr);
-    }
-
     buildSourceTag() {
         let mediaString = this.cloudinaryManager.createMediaString(this.formData);
         let imgString = this.cloudinaryManager.createImageString(this.formData);
@@ -237,7 +212,7 @@ export default class UIManager {
     buildAssetList() {
         let assetSelector = document.getElementById('asset-selector');
 
-        this.data.assets.forEach(item => {
+        this.assets.forEach(item => {
             let opt = document.createElement('option');
             opt.label = item.slug;
             opt.value = item.fileName;
