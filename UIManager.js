@@ -89,11 +89,7 @@ export default class UIManager {
         let li = document.createElement('li');
         li.setAttribute('id', sourcetag);
 
-        if (this.formData.minWidth !== "") {
-            li.innerHTML = `<b>Min Width:</b> ${this.formData.minWidth}  <b>Width:</b> ${this.formData.width}  <b>Height:</b> ${this.formData.height}  <b>Gravity:</b> ${this.formData.gravity}  <b>Crop:</b> ${this.formData.crop}`;
-        } else {
-            li.innerHTML = `<b>Max Width:</b> ${this.formData.maxWidth}  <b>Width:</b> ${this.formData.width}  <b>Height:</b> ${this.formData.height}  <b>Gravity:</b> ${this.formData.gravity}  <b>Crop:</b> ${this.formData.crop}`;
-        }
+        li.innerHTML = (this.formData.minWidth !== "") ? `<b>Min Width:</b> ${this.formData.minWidth}  <b>Width:</b> ${this.formData.width}  <b>Height:</b> ${this.formData.height}  <b>Gravity:</b> ${this.formData.gravity}  <b>Crop:</b> ${this.formData.crop}` : `<b>Max Width:</b> ${this.formData.maxWidth}  <b>Width:</b> ${this.formData.width}  <b>Height:</b> ${this.formData.height}  <b>Gravity:</b> ${this.formData.gravity}  <b>Crop:</b> ${this.formData.crop}`;
 
         li.addEventListener("click", e => this.parseSourceString(e, sourcetag));
         let removeButton = document.createElement('button');
