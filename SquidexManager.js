@@ -1,4 +1,4 @@
-import UIManager from "./UIManager";
+import UIManager from "./UIManager.js";
 
 export default class SquidexManager {
     constructor(options) {
