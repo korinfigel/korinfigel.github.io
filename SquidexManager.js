@@ -21,6 +21,10 @@ export default class SquidexManager {
         }
     }
 
+    updateFormValues(allSourcesStr) {
+        this.form.valueChanged(allSourcesStr);
+    }
+
     getAssets() {
         let { accessToken, tokenType, appName, baseUrl } = this.options;
 
