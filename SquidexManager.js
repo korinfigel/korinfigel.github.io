@@ -13,8 +13,9 @@ export default class SquidexManager {
         if (initialVal !== null) {
             this.initForm(initialVal);
         }
-        this.uiManager = new UIManager(this.options)
-        this.uiManager.initializeUIManager(this.getAssets())
+        let assets = await this.getAssets();
+        this.uiManager = new UIManager(this.options, assets);
+        this.uiManager.initializeUIManager();
     }
 
     getAssets() {
