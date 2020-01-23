@@ -1,4 +1,4 @@
-import UIManager from './UIManager.js';
+import SquidexManager from './SquidexManager.js';
 
 var options = (() => {
     var query = location.search;
@@ -9,7 +9,7 @@ var options = (() => {
     }, {})
 })();
 if (Object.keys(options).length >= 1) {
-    var uiManager = new UIManager(options);
+    var squidexManager = new SquidexManager(options);
 } else {
     console.error("Supplied the wrong number of params");
 }
