@@ -57,7 +57,7 @@ export default class UIManager {
         let initialVal = this.form.getValue();
         if (initialVal !== null) {
             this.initForm(initialVal);
-            this.setImagePreview();
+            this.cloudinaryManager.setImagePreview(initialVal.codename);
         }
     }
 
@@ -204,9 +204,7 @@ export default class UIManager {
         }
     }
 
-    setImagePreview() {
-        document.getElementById('image').src = `https://res.cloudinary.com/${this.options.acctName}/image/upload/${this.formData.codename}`;
-    }
+ 
 
     updateImagePreview(e) {
         this.formData.codename = e.target.value;
