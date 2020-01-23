@@ -9,7 +9,6 @@ export default class CloudinaryManager {
     }
 
     createImageString(formdata) {
-        let acctName = "dnginndga";
         let queryArr = [];
 
         if (formdata.width !== "") {
