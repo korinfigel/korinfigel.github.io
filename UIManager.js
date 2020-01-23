@@ -6,7 +6,7 @@ export default class UIManager {
         this.formData = { codename: "", id: "", maxWidth: "", minWidth: "", width: "", height: "", crop: "", gravity: "", sourceTag: "" };
         this.assets = assets;
         this.sources = []; 
-        this.initializeUIManager()
+        this.initializeUIManager();
     }
 
     initializeUIManager() {
@@ -219,7 +219,5 @@ export default class UIManager {
             opt.id = item.id;
             assetSelector.appendChild(opt);
         });
-
-        return;
     }
 }
