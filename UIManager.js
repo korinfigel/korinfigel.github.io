@@ -57,7 +57,7 @@ export default class UIManager {
         let initialVal = this.form.getValue();
         if (initialVal !== null) {
             this.initForm(initialVal);
-            this.cloudinaryManager.setImagePreview(initialVal.codename);
+            //this.cloudinaryManager.setImagePreview(initialVal.codename);
         }
     }
 
@@ -79,6 +79,8 @@ export default class UIManager {
 
             this.add();
         });
+
+        this.cloudinaryManager.setImagePreview(this.formData.codename);
     }
 
     add() {
