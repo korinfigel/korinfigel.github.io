@@ -4,7 +4,7 @@ export default class CloudinaryManager {
     }
 
     createMediaString(formdata) {
-        var mediaStr;
+        let mediaStr;
 
         if (formdata.minWidth !== "") {
             mediaStr = `media="(min-width: ${formdata.minWidth})"`;
@@ -17,7 +17,7 @@ export default class CloudinaryManager {
 
     createImageString(formdata) {
         let acctName = "dnginndga";
-        var queryArr = [];
+        let queryArr = [];
 
         if (formdata.width !== "") {
             queryArr.push("w_" + formdata.width + "px");
@@ -35,8 +35,8 @@ export default class CloudinaryManager {
             queryArr.push("c_" + formdata.crop);
         }
 
-        var imgStr;
-        var queryStr;
+        let imgStr;
+        let queryStr;
 
         if (queryArr.length < 1) {
             imgStr = `https://res.cloudinary.com/${this.options.acctName}/image/upload/${formData.codename}`;

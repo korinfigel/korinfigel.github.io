@@ -82,11 +82,11 @@ export default class UIManager {
     }
 
     add() {
-        var sourcetag = this.buildItemPreview(this.formData);
+        let sourcetag = this.buildItemPreview(this.formData);
         this.sources.push(this.formData);
         
-        var ul = document.getElementById("item-preview");
-        var li = document.createElement('li');
+        let ul = document.getElementById("item-preview");
+        let li = document.createElement('li');
         li.setAttribute('id', sourcetag);
 
         if (this.formData.minWidth !== "") {
@@ -96,7 +96,7 @@ export default class UIManager {
         }
 
         li.addEventListener("click", e => this.parseSourceString(e, sourcetag));
-        var removeButton = document.createElement('button');
+        let removeButton = document.createElement('button');
         removeButton.className = "btn btn-secondary btn-sm";
         removeButton.appendChild(document.createTextNode("remove"));
         removeButton.addEventListener("click", e => this.removeItem(e, sourcetag));
@@ -104,7 +104,7 @@ export default class UIManager {
         ul.appendChild(li);
 
         this.formData = { codename: this.formData.codename, id: this.formData.id, maxWidth: "", minWidth: "", width: "", height: "", crop: "", gravity: "", sourceTag: "" };
-        var frm = document.getElementById('squidex-form');
+        let frm = document.getElementById('squidex-form');
         frm.reset();
         document.getElementById("maxWidth").removeAttribute("disabled");
         document.getElementById("minWidth").removeAttribute("disabled");
@@ -114,7 +114,7 @@ export default class UIManager {
     }
 
     regexParser(stringToBeParsed) {
-        var parsed = { image: "", maxWidth: "", minWidth: "", width: "", height: "", crop: "", gravity: "", sourceTag: "" };
+        let parsed = { image: "", maxWidth: "", minWidth: "", width: "", height: "", crop: "", gravity: "", sourceTag: "" };
 
         let assetRegex = /([^\/])+[\.][^com]{3}/;
         let mediaSizeRegex = /(?<mediaType>max|min)(?:-width:\s)(?<mediaSize>\d+)/;
@@ -177,7 +177,7 @@ export default class UIManager {
     }
 
     removeItem(e, sourcetag) {
-        var element = document.getElementById(sourcetag);
+        let element = document.getElementById(sourcetag);
         element.parentNode.removeChild(element);
 
         for (var i = 0; i < this.sources.length; i++) {
@@ -225,7 +225,7 @@ export default class UIManager {
     }
 
     updateValue() {
-        var allSourcesStr = "";
+        let allSourcesStr = "";
         for (var i = 0; i < this.sources.length; i++) {
             allSourcesStr = allSourcesStr + this.sources[i].sourceTag;
         }
