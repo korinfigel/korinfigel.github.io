@@ -209,6 +209,7 @@ export default class UIManager {
     }
 
     buildAssetList() {
+        console.log("build asset list called");
         let assetSelector = document.getElementById('asset-selector');
 
         this.assets.forEach(item => {
