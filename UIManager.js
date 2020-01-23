@@ -93,6 +93,17 @@ export default class UIManager {
         document.getElementById("maxWidth").removeAttribute("disabled");
         document.getElementById("minWidth").removeAttribute("disabled");
         document.getElementById('asset-selector').value = this.formData.codename;
+
+        this.updateValue();
+    }
+
+    updateValue() {
+        let allSourcesStr = "";
+        for (var i = 0; i < this.sources.length; i++) {
+            allSourcesStr = allSourcesStr + this.sources[i].sourceTag;
+        }
+
+        this.form.valueChanged(allSourcesStr);
     }
 
     regexParser(stringToBeParsed) {
@@ -180,6 +191,7 @@ export default class UIManager {
                 this.formData.crop = "";
             }
         }
+        this.updateValue();
         e.stopPropagation()
     }
 

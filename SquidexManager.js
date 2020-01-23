@@ -19,9 +19,6 @@ export default class SquidexManager {
         if (initialVal !== null) {
             this.uiManager.initForm(initialVal);
         }
-
-        //this.form.onValueChanged(() => this.form.valueChanged(this.uiManager.sources.join("")))
-        this.form.onValueChanged(() => this.form.valueChanged(this.uiManager.sources.join()))
     }
 
     getAssets() {
