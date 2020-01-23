@@ -14,7 +14,6 @@ export default class SquidexManager {
 
         let assets = await this.getAssets();
         this.uiManager = new UIManager(this.options, assets);
-        //this.uiManager.initializeUIManager();
 
         this.form.onValueChanged(() => this.form.valueChanged(this.uiManager.sources.join("")))
 

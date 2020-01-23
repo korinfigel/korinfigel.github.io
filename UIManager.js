@@ -177,7 +177,6 @@ export default class UIManager {
                 this.formData.crop = "";
             }
         }
-
         e.stopPropagation()
     }
 
@@ -188,8 +187,6 @@ export default class UIManager {
             }
         }
     }
-
- 
 
     updateImagePreview(e) {
         this.formData.codename = e.target.value;
@@ -209,7 +206,6 @@ export default class UIManager {
     }
 
     buildAssetList() {
-        console.log("build asset list called");
         let assetSelector = document.getElementById('asset-selector');
 
         this.assets.forEach(item => {
