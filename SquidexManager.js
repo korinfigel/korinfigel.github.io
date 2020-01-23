@@ -5,7 +5,7 @@ export default class SquidexManager {
         this.options = options;
         this.form = new SquidexFormField();
         this.form.onInit(this.initializeSquidexManager.bind(this));
-        this.form.onValueChanged(() => this.form.valueChanged(this.uiManager.sources.join(""));)
+        this.form.onValueChanged(() => this.form.valueChanged(this.uiManager.sources.join("")))
     }
 
     async initializeSquidexManager(ctx) {
