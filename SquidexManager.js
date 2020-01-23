@@ -8,15 +8,16 @@ export default class SquidexManager {
     }
 
     async initializeSquidexManager(ctx) {
-        let initialVal = this.form.getValue();
-        if (initialVal !== null) {
-            this.initForm(initialVal);
-        }
         let assets = await this.getAssets();
         this.uiManager = new UIManager(this.options, assets);
         this.uiManager.initializeUIManager();
 
         this.form.onValueChanged(() => this.form.valueChanged(this.uiManager.sources.join("")))
+
+        let initialVal = this.form.getValue();
+        if (initialVal !== null) {
+            this.uiManager.initForm(initialVal);
+        }
     }
 
     getAssets() {
