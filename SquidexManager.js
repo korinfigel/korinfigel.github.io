@@ -13,7 +13,7 @@ export default class SquidexManager {
         this.options.tokenType = token_type;
 
         let assets = await this.getAssets();
-        this.uiManager = new UIManager(this.options, assets);
+        this.uiManager = new UIManager(this.options, assets, this.form);
 
         let initialVal = this.form.getValue();
         if (initialVal !== null) {

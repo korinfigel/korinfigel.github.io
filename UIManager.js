@@ -1,8 +1,9 @@
 import CloudinaryManager from "./CloudinaryManager.js";
 
 export default class UIManager {
-    constructor(options, assets) {
+    constructor(options, assets, form) {
         this.options = options;
+        this.form = form;
         this.formData = { codename: "", id: "", maxWidth: "", minWidth: "", width: "", height: "", crop: "", gravity: "", sourceTag: "" };
         this.assets = assets;
         this.sources = []; 
@@ -103,8 +104,7 @@ export default class UIManager {
             allSourcesStr = allSourcesStr + this.sources[i].sourceTag;
         }
 
-        this.squidexManager.form.valueChanged(allSourcesStr);
-        //this.form.valueChanged(allSourcesStr);
+        this.form.valueChanged(allSourcesStr);
     }
 
     regexParser(stringToBeParsed) {
