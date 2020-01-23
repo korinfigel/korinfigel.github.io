@@ -8,6 +8,10 @@ export default class SquidexManager {
     }
 
     async initializeSquidexManager(ctx) {
+        let { access_token, token_type } = ctx.user.user;
+        this.options.accessToken = access_token;
+        this.options.tokenType = token_type;
+
         let assets = await this.getAssets();
         this.uiManager = new UIManager(this.options, assets);
         this.uiManager.initializeUIManager();
