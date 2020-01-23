@@ -6,7 +6,7 @@ export default class UIManager {
         this.formData = { codename: "", id: "", maxWidth: "", minWidth: "", width: "", height: "", crop: "", gravity: "", sourceTag: "" };
         this.assets = assets;
         this.sources = []; 
-        initializeUIManager()
+        this.initializeUIManager()
     }
 
     initializeUIManager() {
