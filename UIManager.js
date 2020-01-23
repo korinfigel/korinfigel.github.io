@@ -9,7 +9,7 @@ export default class UIManager {
         this.initializeUIManager();
     }
 
-    initializeUIManager() {
+    async initializeUIManager() {
         this.cloudinaryManager = new CloudinaryManager(this.options);
         this.buildAssetList();
  
