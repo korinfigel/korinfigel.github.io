@@ -28,6 +28,6 @@ export default class CloudinaryManager {
         }
 
 
-        return (queryArr.length == 0) ? `https://res.cloudinary.com/${this.options.acctName}/image/upload/${formData.codename} : `https://res.cloudinary.com/${this.options.acctName}/image/upload/${queryArr.join(,)}/${formData.codename}`
+        return (queryArr.length == 0) ? `https://res.cloudinary.com/${this.options.acctName}/image/upload/${formData.codename}` : `https://res.cloudinary.com/${this.options.acctName}/image/upload/${queryArr.join(",")}/${formData.codename}`;
     }
 }
