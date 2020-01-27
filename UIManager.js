@@ -239,6 +239,15 @@ export default class UIManager {
     }
 
     filterAssetList(filter) {
+        let assetSelector = document.getElementById('asset-selector');
 
+        console.log("filter is:");
+        console.log(filter);
+
+        //this.assets.forEach(item => {
+        //    if (!item.tags.includes(filter)) {
+        //        assetSelector.removeChild(item);
+        //    }
+        //});
     }
 }
