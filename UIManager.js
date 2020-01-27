@@ -21,7 +21,7 @@ export default class UIManager {
             .addEventListener('change', this.updateImagePreview.bind(this));
 
         document.getElementById('assetFilter')
-            .addEventListener('change', this.filterAssetList(e));
+            .addEventListener('change', this.filterAssetList(this));
 
         minSelect.addEventListener('change', this.updateValues.bind(this));
         minSelect.addEventListener('change', (e) => {
