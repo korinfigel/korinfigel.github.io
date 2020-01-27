@@ -240,24 +240,17 @@ export default class UIManager {
 
     filterAssetList(e) {
         let assetSelector = document.getElementById('asset-selector');
-        //console.log("e is:");
-        //console.log(e);
 
         //for (var i = 1; i < assetSelector.options.length; i++) {
-        //    if (assetSelector.options[i].tags.indexOf(e.target.value)) {
-        //        console.log(assetSelector.options[i].tags);
-        //        console.log("item should be removed");
-        //        console.log(assetSelector.options[i]);
+        //    for (var x = 0; x < assetSelector.options[i].tags.length; x++) {
+        //        if (assetSelector.options[i].tags[x] == e.target.value) {
+        //            assetSelector.removeChild(assetSelector.options[i]);
+        //        }
         //    }
         //}
-
-
         for (var i = 1; i < assetSelector.options.length; i++) {
-            for (var x = 0; x < assetSelector.options[i].tags.length; x++) {
-                if (assetSelector.options[i].tags[x] == e.target.value) {
-                    console.log("Match!");
-                    console.log(assetSelector.options[i]);
-                }
+            if (assetSelector.options[i].tags.indexOf(e.target.value) == 1) {
+                assetSelector.removeChild(assetSelector.options[i]);
             }
         }
 
