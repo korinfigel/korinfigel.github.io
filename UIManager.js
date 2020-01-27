@@ -240,14 +240,10 @@ export default class UIManager {
 
     filterAssetList(e) {
         let assetSelector = document.getElementById('asset-selector');
+        assetSelector.options.length = 0;
 
-        //for (var i = 1; i < assetSelector.options.length; i++) {
-        //    for (var x = 0; x < assetSelector.options[i].tags.length; x++) {
-        //        if (assetSelector.options[i].tags[x] == e.target.value) {
-        //            assetSelector.removeChild(assetSelector.options[i]);
-        //        }
-        //    }
-        //}
+        await this.buildAssetList();
+
         for (var i = 1; i < assetSelector.options.length; i++) {
             let match = assetSelector.options[i].tags.indexOf(e.target.value);
 
