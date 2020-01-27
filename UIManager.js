@@ -249,11 +249,12 @@ export default class UIManager {
         //    }
         //}
         for (var i = 1; i < assetSelector.options.length; i++) {
-            //if (assetSelector.options[i].tags.indexOf(e.target.value) == 1) {
-            //    assetSelector.removeChild(assetSelector.options[i]);
-            //}
             let match = assetSelector.options[i].tags.indexOf(e.target.value);
-            console.log(match);
+
+            if (match == -1) {
+                assetSelector.removeChild(assetSelector.options[i]);
+            }
+   
         }
 
     }
