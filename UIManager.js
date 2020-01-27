@@ -243,10 +243,12 @@ export default class UIManager {
         //console.log("e is:");
         //console.log(e);
 
-        this.assets.forEach(item => {
-            if (!item.tags.includes(e.target.value)) {
-                assetSelector.removeChild(item);
+        assetSelector.children.forEach(asset => {
+            if (!asset.tags.includes(e.target.value)) {
+                console.log("item should be removed");
+                console.log(asset);
             }
         });
+
     }
 }

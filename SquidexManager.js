@@ -22,11 +22,7 @@ export default class SquidexManager {
     }
 
     getAssets() {
-        let { accessToken, tokenType, appName, baseUrl, filter } = this.options;
-
-        //if (filter !== null) {
-
-        //}
+        let { accessToken, tokenType, appName, baseUrl } = this.options;
 
         return new Promise((resolved, rejected) => {
             fetch(`http://${baseUrl}/api/apps/${appName}/assets`,
