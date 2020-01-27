@@ -254,9 +254,9 @@ export default class UIManager {
 
         for (var i = 1; i < assetSelector.options.length; i++) {
             for (var x = 0; x < assetSelector.options[i].tags.length; x++) {
-                if (assetSelector.options[i].tags[x] == e.target.value) {
+                if (assetSelector.options[i].tags[x].value == e.target.value) {
                     console.log("Match!");
-                    console.log(assetSelector.options[i].tags[x]);
+                    console.log(assetSelector.options[i]);
                 }
             }
         }
