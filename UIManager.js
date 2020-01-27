@@ -20,6 +20,9 @@ export default class UIManager {
         document.getElementById('asset-selector')
             .addEventListener('change', this.updateImagePreview.bind(this));
 
+        //document.getElementById('assetFilterCheckbox')
+        //    .addEventListener('change', )
+
         minSelect.addEventListener('change', this.updateValues.bind(this));
         minSelect.addEventListener('change', (e) => {
             this.formData.minWidth = e.target.value;
@@ -223,6 +226,7 @@ export default class UIManager {
 
     buildAssetList() {
         let assetSelector = document.getElementById('asset-selector');
+        let assetFilter = document.getElementById('assetFilterCheckbox');
 
         this.assets.forEach(item => {
             let opt = document.createElement('option');
