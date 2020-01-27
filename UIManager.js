@@ -228,6 +228,8 @@ export default class UIManager {
             let opt = document.createElement('option');
             opt.label = item.slug;
             opt.value = item.fileName;
+            opt.fileType = item.fileType;
+            opt.tags = item.tags;
             opt.id = item.id;
             assetSelector.appendChild(opt);
         });
