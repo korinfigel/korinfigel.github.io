@@ -243,7 +243,7 @@ export default class UIManager {
         //console.log("e is:");
         //console.log(e);
 
-        for (var i = 0; i < assetSelector.options.length; i++) {
+        for (var i = 1; i < assetSelector.options.length; i++) {
             if (assetSelector.options[i].tags.indexOf(e.target.value)) {
                 console.log("item should be removed");
                 console.log(assetSelector.options[i]);
