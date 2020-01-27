@@ -1,5 +1,3 @@
-SquidexManager.js
-
 import UIManager from "./UIManager.js";
 
 export default class SquidexManager {

@@ -1,5 +1,3 @@
-// UIManager
-
 import CloudinaryManager from "./CloudinaryManager.js";
 
 export default class UIManager {
