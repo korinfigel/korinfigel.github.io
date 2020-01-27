@@ -248,7 +248,8 @@ export default class UIManager {
             let match = assetSelector.options[i].tags.indexOf(e.target.value);
 
             if (match == -1) {
-                assetSelector.removeChild(assetSelector.options[i]);
+                //assetSelector.removeChild(assetSelector.options[i]);
+                assetSelector.remove(assetSelector.options[i]);
             }
    
         }
