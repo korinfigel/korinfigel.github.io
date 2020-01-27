@@ -242,7 +242,7 @@ export default class UIManager {
         let assetSelector = document.getElementById('asset-selector');
         assetSelector.options.length = 0;
 
-        await this.buildAssetList();
+        let fullList = await this.buildAssetList();
 
         for (var i = 1; i < assetSelector.options.length; i++) {
             let match = assetSelector.options[i].tags.indexOf(e.target.value);
