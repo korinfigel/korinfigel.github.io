@@ -24,6 +24,8 @@ export default class SquidexManager {
     getAssets() {
         let { accessToken, tokenType, appName, baseUrl } = this.options;
 
+        let assetFilterCheckbox = document.getElementById("assetFilterCheckbox");
+
         return new Promise((resolved, rejected) => {
             fetch(`http://${baseUrl}/api/apps/${appName}/assets`,
                     {

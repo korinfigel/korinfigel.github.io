@@ -14,7 +14,16 @@
     <div class="container">
         <form id="squidex-form">
             <div id="assetFilter" class="form-row">
-                <input type="checkbox" name="assetFilter" value="all" />Filter by tags
+                <input id="assetFilterCheckbox" type="checkbox" name="assetFilter" value="all" />Filter by tags
+            </div>
+            <div class="form-row">
+                <input type="radio" name="tagSelector" value="image/large" />image/large
+                <input type="radio" name="tagSelector" value="image/medium" />image/medium
+                <input type="radio" name="tagSelector" value="image/small" />image/small
+                <input type="radio" name="tagSelector" value="type/jpg" />type/jpg
+                <!--<input type="radio" name="tagSelector" value="type/mov" />-->
+                <input type="radio" name="tagSelector" value="type/png" />type/png
+                <input type="radio" name="tagSelector" value="type/svg" />type/svg
             </div>
             <div id="asset" class="form-row">
                 <select class="form-control" name="asset-selector" id="asset-selector">
