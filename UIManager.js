@@ -21,7 +21,7 @@ export default class UIManager {
             .addEventListener('change', this.updateImagePreview.bind(this));
 
         document.getElementById('assetFilter')
-            .addEventListener('change', this.filterAssetList(this));
+            .addEventListener('change', this.filterAssetList(e));
 
         minSelect.addEventListener('change', this.updateValues.bind(this));
         minSelect.addEventListener('change', (e) => {
@@ -238,11 +238,11 @@ export default class UIManager {
         });
     }
 
-    filterAssetList(filter) {
+    filterAssetList(e) {
         let assetSelector = document.getElementById('asset-selector');
 
-        console.log("filter is:");
-        console.log(filter);
+        console.log("e is:");
+        console.log(e);
 
         //this.assets.forEach(item => {
         //    if (!item.tags.includes(filter)) {
