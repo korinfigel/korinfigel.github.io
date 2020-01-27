@@ -1,3 +1,5 @@
+SquidexManager.js
+
 import UIManager from "./UIManager.js";
 
 export default class SquidexManager {
@@ -26,11 +28,11 @@ export default class SquidexManager {
 
         return new Promise((resolved, rejected) => {
             fetch(`http://${baseUrl}/api/apps/${appName}/assets`,
-                    {
-                        headers: {
-                            Authorization: `${tokenType} ${accessToken}`
-                        }
-                    })
+                {
+                    headers: {
+                        Authorization: `${tokenType} ${accessToken}`
+                    }
+                })
                 .then(res => res.json())
                 .then(res => resolved(res.items))
                 .catch(err => rejected(err))

@@ -17,9 +17,10 @@ li {
     list-style: none;
     font-size: 1vw;
 }
-li:hover {
-    cursor: pointer;
-}
+
+    li:hover {
+        cursor: pointer;
+    }
 
 img {
     width: 100%;
@@ -45,10 +46,6 @@ img {
 
 #minWidth {
     margin-left: 8px;
-}
-
-#assetFilter {
-    margin-top: 5px;
 }
 
 .form-row {

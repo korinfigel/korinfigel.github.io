@@ -1,3 +1,5 @@
+// UIManager
+
 import CloudinaryManager from "./CloudinaryManager.js";
 
 export default class UIManager {
@@ -6,37 +8,34 @@ export default class UIManager {
         this.form = form;
         this.formData = { codename: "", id: "", maxWidth: "", minWidth: "", width: "", height: "", crop: "", gravity: "", sourceTag: "" };
         this.assets = assets;
-        this.sources = []; 
+        this.sources = [];
         this.initializeUIManager();
     }
 
     async initializeUIManager() {
         this.cloudinaryManager = new CloudinaryManager(this.options);
         this.buildAssetList();
- 
+
         let maxSelect = document.getElementById('maxWidth');
         let minSelect = document.getElementById('minWidth');
 
         document.getElementById('asset-selector')
             .addEventListener('change', this.updateImagePreview.bind(this));
 
-        document.getElementById('assetFilter')
-            .addEventListener('change', this.filterAssetList.bind(this));
-
         minSelect.addEventListener('change', this.updateValues.bind(this));
         minSelect.addEventListener('change', (e) => {
             this.formData.minWidth = e.target.value;
-                document.getElementById("maxWidth").setAttribute("disabled", "disabled");
-                if (this.value == '')
-                    document.getElementById("maxWidth").removeAttribute("disabled");
+            document.getElementById("maxWidth").setAttribute("disabled", "disabled");
+            if (this.value == '')
+                document.getElementById("maxWidth").removeAttribute("disabled");
         });
 
         maxSelect.addEventListener('change', this.updateValues.bind(this));
         maxSelect.addEventListener('change', (e) => {
-                    document.getElementById("minWidth").setAttribute("disabled", "disabled");
-                    if (this.value == '')
-                        document.getElementById("minWidth").removeAttribute("disabled");
-            });
+            document.getElementById("minWidth").setAttribute("disabled", "disabled");
+            if (this.value == '')
+                document.getElementById("minWidth").removeAttribute("disabled");
+        });
 
         document.getElementById('width')
             .addEventListener('change', this.updateValues.bind(this));
@@ -76,7 +75,7 @@ export default class UIManager {
     add() {
         let sourcetag = this.buildSourceTag(this.formData);
         this.sources.push(this.formData);
-        
+
         let ul = document.getElementById("item-preview");
         let li = document.createElement('li');
         li.setAttribute('id', sourcetag);
@@ -132,7 +131,7 @@ export default class UIManager {
             parsed.maxWidth = minMaxValue + "px";
             parsed.minWidth = "";
         }
-        
+
         let w = widthRegex.exec(stringToBeParsed);
         let h = heightRegex.exec(stringToBeParsed);
         let g = gravityRegex.exec(stringToBeParsed);
@@ -231,28 +230,8 @@ export default class UIManager {
             let opt = document.createElement('option');
             opt.label = item.slug;
             opt.value = item.fileName;
-            opt.fileType = item.fileType;
-            opt.tags = item.tags;
             opt.id = item.id;
             assetSelector.appendChild(opt);
         });
-    }
-
-    filterAssetList(e) {
-        let assetSelector = document.getElementById('asset-selector');
-        assetSelector.options.length = 0;
-
-        this.buildAssetList();
-
-        for (var i = 1; i < assetSelector.options.length; i++) {
-            let match = assetSelector.options[i].tags.indexOf(e.target.value);
-
-            if (match == -1) {
-                //assetSelector.removeChild(assetSelector.options[i]);
-                assetSelector.remove(assetSelector.options[i]);
-            }
-   
-        }
-
     }
 }
