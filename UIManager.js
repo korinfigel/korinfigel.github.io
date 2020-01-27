@@ -20,8 +20,8 @@ export default class UIManager {
         document.getElementById('asset-selector')
             .addEventListener('change', this.updateImagePreview.bind(this));
 
-        //document.getElementById('assetFilterCheckbox')
-        //    .addEventListener('change', )
+        document.getElementById('assetFilter')
+            .addEventListener('change', this.filterAssetList(this));
 
         minSelect.addEventListener('change', this.updateValues.bind(this));
         minSelect.addEventListener('change', (e) => {
@@ -226,7 +226,6 @@ export default class UIManager {
 
     buildAssetList() {
         let assetSelector = document.getElementById('asset-selector');
-        let assetFilter = document.getElementById('assetFilterCheckbox');
 
         this.assets.forEach(item => {
             let opt = document.createElement('option');
@@ -237,5 +236,9 @@ export default class UIManager {
             opt.id = item.id;
             assetSelector.appendChild(opt);
         });
+    }
+
+    filterAssetList(filter) {
+
     }
 }
