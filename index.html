@@ -1,1 +1,135 @@
-Hello World
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Asset Selector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./main.js"></script>
+    <script src="https://cloud.squidex.io/scripts/editor-sdk.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form id="squidex-form">
+            <div id="asset" class="form-row">
+                <select class="form-control" name="asset-selector" id="asset-selector">
+                    <option value="">Select an Asset</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="maxWidth">Max-Width:</label>
+                            <select class="form-control form-control-sm" name="maxWidth" id="maxWidth">
+                                <option value=""></option>
+                                <option value="320px">320px</option>
+                                <option value="480px">480px</option>
+                                <option value="600px">600px</option>
+                                <option value="768px">768px</option>
+                                <option value="900px">900px</option>
+                                <option value="1024px">1024px</option>
+                                <option value="1200px">1200px</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="minWidth">Min-Width:</label>
+                            <select class="form-control form-control-sm" name="minWidth" id="minWidth">
+                                <option value=""></option>
+                                <option value="320px">320px</option>
+                                <option value="480px">480px</option>
+                                <option value="600px">600px</option>
+                                <option value="768px">768px</option>
+                                <option value="900px">900px</option>
+                                <option value="1024px">1024px</option>
+                                <option value="1200px">1200px</option>
+                                <option value="2000px">2000px</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="width">Width:</label>
+                        <input class="form-control form-control-sm" name="width" type="number" id="width" />
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height:</label>
+                        <input class="form-control form-control-sm" name="height" type="number" id="height" />
+                    </div>
+                    <div class="form-group">
+                        <label for="gravity">Gravity:</label>
+                        <select class="form-control form-control-sm" name="gravity" id="gravity">
+                            <option value=""></option>
+                            <option value="north_west">North West</option>
+                            <option value="north">North</option>
+                            <option value="north_east">North East</option>
+                            <option value="west">West</option>
+                            <option value="east">East</option>
+                            <option value="center">Center</option>
+                            <option value="south_west">South West</option>
+                            <option value="south">South</option>
+                            <option value="south_east">South East</option>
+                            <option value="xy_center">XY Center</option>
+                            <option value="face">Face</option>
+                            <option value="face:center">Face: Center</option>
+                            <option value="face:auto">Face: Auto</option>
+                            <option value="faces">Faces</option>
+                            <option value="faces:center">Faces: Center</option>
+                            <option value="faces:auto">Faces: Auto</option>
+                            <option value="body">Body</option>
+                            <option value="body:face">Body: Face</option>
+                            <option value="liquid">Liquid</option>
+                            <option value="ocr_text">OCR Text</option>
+                            <option value="adv_face">Adv Face</option>
+                            <option value="adv_faces">Adv Faces</option>
+                            <option value="adv_eyes">Adv Eyes</option>
+                            <option value="custom">Custom</option>
+                            <option value="custom:face">Custom Face</option>
+                            <option value="custom:faces">Custom Faces</option>
+                            <option value="custom:adv_face">Custom Adv Face</option>
+                            <option value="custom:adv_faces">Custom Adv Faces</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="crop">Crop:</label>
+                        <select class="form-control form-control-sm" name="crop" id="crop">
+                            <option value=""></option>
+                            <option value="scale">Scale</option>
+                            <option value="fit">Fit</option>
+                            <option value="limit">Limit</option>
+                            <option value="mfit">MFit</option>
+                            <option value="fill">Fill</option>
+                            <option value="lfill">LFill</option>
+                            <option value="pad">Pad</option>
+                            <option value="lpad">LPad</option>
+                            <option value="mpad">MPad</option>
+                            <option value="fill_pad">Fill Pad</option>
+                            <option value="crop">Crop</option>
+                            <option value="thumb">Thumb</option>
+                            <option value="imagga_crop">Imagga Crop</option>
+                            <option value="imagga_scale">Imagga Scale</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-primary" type="button" id="addBtn" onclick="add()" value="Add" />
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="row" id="imgPreview">
+                        <img id="image" />
+                    </div>
+                </div>
+            </div>
+            <div id="urlDisplay" class="row">
+                <div class="col-md-12">
+                    <ul id="item-preview">
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+body {
+    height: 600px;
+    font-family: 'Open Sans', sans-serif !important;
+    line-height: 0.5;
+}
+
+label {
+    font-size: 1vw;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    font-size: 1vw;
+}
+
+    li:hover {
+        cursor: pointer;
+    }
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+#urlDisplay {
+    margin-top: 30px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+#squidex-form {
+    max-height: 300px;
+}
+
+#asset {
+    margin-bottom: 15px;
+}
+
+#minWidth {
+    margin-left: 8px;
+}
+
+.form-row {
+    margin-bottom: 3px;
+}
+
+.btn {
+    margin-left: 3px;
+}
